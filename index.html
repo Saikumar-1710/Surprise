@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday ❤️ — Surprise</title>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  
+</head>
+<body>
+	<audio id="bgMusic" src="img/audio_clean.mp3" preload="auto"></audio>
+	
+  <canvas id="confetti"></canvas>
+  <div class="stars" aria-hidden="true"></div>
+
+  <div class="page">
+    <div class="container">
+      <div class="card">
+        <header>
+          <div class="left">
+            <div class="wish">
+              <div class="cake-wrap">
+                <div class="cake" aria-hidden="true">
+                  <!-- simple cake svg -->
+                  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="12" y="50" width="96" height="36" rx="8" fill="#fff0f4"/>
+                    <rect x="18" y="58" width="84" height="24" rx="6" fill="#ffd7e6"/>
+                    <g transform="translate(40,18)">
+                      <rect x="0" y="6" width="40" height="28" rx="6" fill="#ffecb3"/>
+                      <path d="M10 4c0-4 4-4 4-4s0 4 4 4 4 0 4 0" fill="#ff7043" opacity="0.9"/>
+                      <rect x="14" y="-4" width="4" height="12" rx="2" fill="#ffab91"/>
+                    </g>
+                  </svg>
+                </div>
+                <div style="flex:1">
+                  <h1 id="wishText"><span id="typed" class="typed"></span><span class="cursor">|</span></h1>
+                  <div class="sub">A little surprise written from the heart — swipe photos and open your gift <a href="#">🎁</a></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start">
+              <div class="album">
+                <div class="slides" id="slides">
+                  <!-- default placeholder slides (SVG backgrounds) -->
+                  <!--<img class="active" >  -->
+                  <img class="active" src="img/03.jpg" alt="03">
+                  <img src="img/01.jpg" alt="Photo 1">
+                  <img src="img/02.jpg" alt="Photo 2">
+                  <img src="img/2.jpg" alt="Photo 2">
+                  <img src="img/04.jpg" alt="Photo 4">
+                  <img src="img/05.jpg" alt="Photo 5">
+                  <img src="img/06.jpg" alt="Photo 6">
+                  <img src="img/6.jpg" alt="Photo 6">
+                  <img src="img/07.jpg" alt="Photo 7">
+                  <img src="img/7.jpg" alt="Photo 7">
+                  <img src="img/8.jpg" alt="Photo 8">
+                  <img src="img/9.jpg" alt="Photo 9">
+                  <img src="img/10.jpg" alt="Photo 10">
+                </div>
+
+                <div class="album-controls">
+                  <div>
+                    <label class="btn" for="photoUpload">Add Photo</label>
+                    <input id="photoUpload" type="file" accept="image/*" style="display:none" multiple>
+                    
+                  </div>
+                  <div style="display:flex;gap:8px">
+                    <button class="btn" id="prevSlide">◀</button>
+                    <button class="btn" id="nextSlide">▶</button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="flex:1;min-width:220px">
+                <div class="feature">
+                  <strong>Music</strong>
+                  <div class="controls">
+                    <button class="btn" id="playMusic">Play</button>
+                    <button class="btn" id="stopMusic">Stop</button>
+                    <div style="flex:1"><input id="vol" type="range" min="0" max="1" step="0.01" value="0.7"></div>
+                  </div>
+                </div>
+
+                <div class="feature">
+                  <strong>Quotes</strong>
+                  <div class="quotes">
+                    <div class="quote-text" id="quoteText">"I love you to the moon and back."</div>
+                    <div style="display:flex;justify-content:space-between;margin-top:6px">
+                      <button class="btn" id="prevQuote">Prev</button>
+                      <button class="btn" id="nextQuote">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </header>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for surprise -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true">
+    <div class="modal-card">
+      <h2 id="modalTitle">Surprise!</h2>
+      <p id="modalMessage">Open your gift and make a wish 💫</p>
+      <div style="margin-top:12px">
+        <button class="btn" id="modalConfetti">Celebrate 🎊</button>
+        <button class="btn" id="modalClose">Close</button>
+      </div>
+      <div style="margin-top:14px">
+        <a id="openGiftLink" class="btn" href="#" target="_blank">Open Gift Page</a>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
